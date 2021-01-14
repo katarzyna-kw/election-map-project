@@ -14,4 +14,13 @@ biden.electionResults = [0, 0, 11, 0, 50, 9, 7, 3, 3, 10, 16, 4, 0, 20, 0, 0, 0,
 
 trump.electionResults = [9, 3, 0, 6, 5, 0, 0, 0, 0, 19, 0, 0, 4, 0, 11, 6, 6, 8, 8, 1, 0, 0, 0, 0, 6, 10, 3, 4, 0, 0, 0, 0, 0, 15, 3, 18, 7, 0, 0, 0, 9,  3, 11, 28, 6, 0, 0, 0, 5, 0, 3];
 
+biden.electionResults[9] = 0;
+trump.electionResults[9] = 29;
+
+biden.electionResults[4] = 55;
+trump.electionResults[4] = 0;
+
+biden.electionResults[43] = 0;
+trump.electionResults[43] = 38;
+
 console.log(biden.electionResults);
