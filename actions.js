@@ -16,9 +16,9 @@ var createPolitician = function(name, partyColor) {
      return politician;
 }
    
-var biden = createPolitician("Joe Biden", [245, 141, 136]);
-   
-var trump = createPolitician("Donald Trump", [132, 17, 11]);
+var biden = createPolitician("Joe Biden", [132, 17, 11]);
+
+var trump = createPolitician("Donald Trump", [245, 141, 136]);
 
 //*results*//
 
@@ -49,7 +49,30 @@ var setStateResults = function(state) {
     else {
       theStates[state].rbgColor = [11, 32, 57];
     }
-}     
+    var stateInfoTable = document.getElementById("stateResults");
+    var header = stateInfoTable.children[0];
+    var body = stateInfoTable.children[1];
+    var stateName = header.children[0].children[0];
+    var abbrev = header.children[0].children[1];
+    var candidate1Name = body.children[0].children[0];
+    var candidate2Name = body.children[1].children[0];
+    var candidate1Results = body.children[0].children[1];
+    var candidate2Results = body.children[1].children[1];
+    var winnerName = body.children[2].children[1];
+
+    stateName.innerText = theStates[state].nameFull;
+    abbrev.innerText = theStates[state].nameAbbrev;
+    candidate1Name.innerText = biden.name;
+    candidate2Name.innerText = trump.name;
+    candidate1Results.innerText = biden.electionResults[state];
+    candidate2Results.innerText = trump.electionResults[state];
+
+    if (theStates[state].winner === null) {
+        winnerName.innerText = "TIE"
+    } else {
+        winnerName.innerText = theStates[state].winner.name;
+    }
+}   
 
 
 biden.tallyUpTotalVotes();
@@ -72,4 +95,4 @@ row.children[0].innerText = biden.name;
 row.children[1].innerText = biden.totalVotes;
 row.children[2].innerText = trump.name;
 row.children[3].innerText = trump.totalVotes;
-row.childten[5].innerText = winner;
+row.children[5].innerText = winner;
