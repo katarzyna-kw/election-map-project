@@ -8,7 +8,7 @@
 
 body {
   font: 16px/26px 'Open Sans', Helvetica, Arial, sans-serif;
-  color: #454545;
+  color: #457b9d;
   margin: 0px;
   padding: 0px;
   background-color: #eee;
@@ -19,7 +19,7 @@ header {
   text-align: center;
   font-family: 'Montserrat', serif;
   font-size: 21px;
-  text-shadow: 1px 1px #ccc;
+  text-shadow: 2px 3px #ccc;
 }
 
 .map-container {
@@ -49,26 +49,29 @@ header {
 
 th, td {
   text-align: left;
-  padding: 8px;
+  padding: 7px;
 }
 #stateResults th{
-  background-color: #3b3b3b;
-  color: white;
+  background-color: #F1FAEE;
+  color: #1D3557;
 }
 #countryResults th {
-  background-color: #f16059;
+  background-color: #1D3557;
   color: white;
 }
 .name-1 {
-  background-color: rgb(132,17,11);
-  color: white;
+  background-color: rgb(168, 218, 220);
+  color: #1d3557;
+  padding-left: 15px;
 }
 .name-2 {
-  background-color: rgb(245, 141, 136);
-  color: white;
+  background-color: rgb(235, 92, 104);
+  color: #1d3557;
+  padding-left: 15px;
+  padding-right: 0;
 }
 .winner {
-  background-color: #f16059;
+  background-color: rgb(29, 53, 87);
   color: white;
 }
 
@@ -77,8 +80,18 @@ footer p {
   font-size: 12px;
   text-align: center;
   text-transform: uppercase;
+  color: #454545;
 }
 footer span {
   color: #f16059;
   padding: 0 5px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #457b9d;
+}
+
+footer a:hover {
+  color:rgb(168, 218, 220);
 }

@@ -16,9 +16,9 @@ var createPolitician = function(name, partyColor) {
      return politician;
 }
    
-var biden = createPolitician("Joe Biden", [132, 17, 11]);
+var biden = createPolitician("Joe Biden", [168, 218, 220]);
 
-var trump = createPolitician("Donald Trump", [245, 141, 136]);
+var trump = createPolitician("Donald Trump", [235, 92, 104]);
 
 //*results*//
 
