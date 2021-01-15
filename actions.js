@@ -33,6 +33,16 @@ var createPolitician = function(name, partyColor) {
    biden.electionResults[43] = 0;
    trump.electionResults[43] = 38;
    
+   var setStateResults = function(state) {
+    theStates[state].winner = null;
+    if (biden.electionResults[state] > trump.electionResults[state]) {
+      theStates[state].winner = biden;  
+    } else if (trump.electionResults[state] > biden.electionResults[state]) {
+      theStates[state].winner = trump;
+    }
+   }  
+
+
    biden.tallyUpTotalVotes();
    trump.tallyUpTotalVotes();
    
@@ -46,5 +56,4 @@ var createPolitician = function(name, partyColor) {
        winner = "TIE."
      }
    
-   console.log("Joe Biden's color is " + biden.partyColor);
    
