@@ -40,7 +40,14 @@ var createPolitician = function(name, partyColor) {
     } else if (trump.electionResults[state] > biden.electionResults[state]) {
       theStates[state].winner = trump;
     }
-   }  
+    var stateWinner = theStates[state].winner;
+    if (theStates[state].winner != null) {
+      theStates[state].rgbColor = stateWinner.partyColor;
+    }
+    else {
+      theStates[state].rbgColor = [11, 32, 57];
+    }
+  }  
 
 
    biden.tallyUpTotalVotes();
