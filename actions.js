@@ -14,26 +14,28 @@ var createPolitician = function(name, partyColor) {
    };
      
      return politician;
-   }
+}
    
-   var biden = createPolitician("Joe Biden", [245, 141, 136]);
+var biden = createPolitician("Joe Biden", [245, 141, 136]);
    
-   var trump = createPolitician("Donald Trump", [132, 17, 11]);
+var trump = createPolitician("Donald Trump", [132, 17, 11]);
+
+//*results*//
+
+biden.electionResults = [0, 0, 11, 0, 50, 9, 7, 3, 3, 10, 16, 4, 0, 20, 0, 0, 0, 0, 0, 3, 10, 11, 16, 10, 0, 0, 0, 1, 6, 4, 14, 5, 29, 0, 0, 0, 0, 7, 20, 4, 0, 0, 0, 10, 0, 3, 13, 12, 0, 10, 0];
    
-   biden.electionResults = [0, 0, 11, 0, 50, 9, 7, 3, 3, 10, 16, 4, 0, 20, 0, 0, 0, 0, 0, 3, 10, 11, 16, 10, 0, 0, 0, 1, 6, 4, 14, 5, 29, 0, 0, 0, 0, 7, 20, 4, 0, 0, 0, 10, 0, 3, 13, 12, 0, 10, 0];
+trump.electionResults = [9, 3, 0, 6, 5, 0, 0, 0, 0, 19, 0, 0, 4, 0, 11, 6, 6, 8, 8, 1, 0, 0, 0, 0, 6, 10, 3, 4, 0, 0, 0, 0, 0, 15, 3, 18, 7, 0, 0, 0, 9,  3, 11, 28, 6, 0, 0, 0, 5, 0, 3];
    
-   trump.electionResults = [9, 3, 0, 6, 5, 0, 0, 0, 0, 19, 0, 0, 4, 0, 11, 6, 6, 8, 8, 1, 0, 0, 0, 0, 6, 10, 3, 4, 0, 0, 0, 0, 0, 15, 3, 18, 7, 0, 0, 0, 9,  3, 11, 28, 6, 0, 0, 0, 5, 0, 3];
+biden.electionResults[9] = 0;
+trump.electionResults[9] = 29;
    
-   biden.electionResults[9] = 0;
-   trump.electionResults[9] = 29;
+biden.electionResults[4] = 55;
+trump.electionResults[4] = 0;
    
-   biden.electionResults[4] = 55;
-   trump.electionResults[4] = 0;
+biden.electionResults[43] = 0;
+trump.electionResults[43] = 38;
    
-   biden.electionResults[43] = 0;
-   trump.electionResults[43] = 38;
-   
-   var setStateResults = function(state) {
+var setStateResults = function(state) {
     theStates[state].winner = null;
     if (biden.electionResults[state] > trump.electionResults[state]) {
       theStates[state].winner = biden;  
@@ -47,20 +49,27 @@ var createPolitician = function(name, partyColor) {
     else {
       theStates[state].rbgColor = [11, 32, 57];
     }
-  }  
+}     
 
 
-   biden.tallyUpTotalVotes();
-   trump.tallyUpTotalVotes();
+biden.tallyUpTotalVotes();
+trump.tallyUpTotalVotes();
    
-   var winner = "?";
+var winner = "?";
    
-   if (biden.totalVotes > trump.totalVotes) {
-       winner = biden.name;
-     } else if (biden.totalVotes < trump.totalVotes) { 
-       winner = trump.name;
-     } else {
-       winner = "TIE."
-     }
+if (biden.totalVotes > trump.totalVotes) {
+    winner = biden.name;
+} else if (biden.totalVotes < trump.totalVotes) { 
+    winner = trump.name;
+} else {
+    winner = "TIE."
+}
    
-   
+var countryInfoTable = document.getElementById("countryResults");
+var row = countryInfoTable.children[0].children[0];
+
+row.children[0].innerText = biden.name;
+row.children[1].innerText = biden.totalVotes;
+row.children[2].innerText = trump.name;
+row.children[3].innerText = trump.totalVotes;
+row.childten[5].innerText = winner;
