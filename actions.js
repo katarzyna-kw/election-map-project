@@ -1,5 +1,5 @@
-var createPolitician = function(name, partyColor) {
-    var politician = {};
+const createPolitician = function(name, partyColor) {
+    let politician = {};
      politician.name = name;
      politician.partyColor = partyColor;
      politician.electionResults = null;
@@ -8,7 +8,7 @@ var createPolitician = function(name, partyColor) {
      politician.tallyUpTotalVotes = function () {
      this.totalVotes=0;
      
-     for (var i = 0; i < this.electionResults.length; i++) {
+     for (let i = 0; i < this.electionResults.length; i++) {
           this.totalVotes = this.totalVotes + this.electionResults[i];
        }
    };
@@ -16,9 +16,9 @@ var createPolitician = function(name, partyColor) {
      return politician;
 }
    
-var biden = createPolitician("Joe Biden", [168, 218, 220]);
+const biden = createPolitician("Joe Biden", [168, 218, 220]);
 
-var trump = createPolitician("Donald Trump", [235, 92, 104]);
+const trump = createPolitician("Donald Trump", [235, 92, 104]);
 
 //*results*//
 
