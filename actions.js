@@ -35,30 +35,30 @@ trump.electionResults[4] = 0;
 biden.electionResults[43] = 0;
 trump.electionResults[43] = 38;
    
-var setStateResults = function(state) {
+const setStateResults = function(state) {
     theStates[state].winner = null;
     if (biden.electionResults[state] > trump.electionResults[state]) {
       theStates[state].winner = biden;  
     } else if (trump.electionResults[state] > biden.electionResults[state]) {
       theStates[state].winner = trump;
     }
-    var stateWinner = theStates[state].winner;
+    let stateWinner = theStates[state].winner;
     if (theStates[state].winner != null) {
       theStates[state].rgbColor = stateWinner.partyColor;
     }
     else {
       theStates[state].rbgColor = [11, 32, 57];
     }
-    var stateInfoTable = document.getElementById("stateResults");
-    var header = stateInfoTable.children[0];
-    var body = stateInfoTable.children[1];
-    var stateName = header.children[0].children[0];
-    var abbrev = header.children[0].children[1];
-    var candidate1Name = body.children[0].children[0];
-    var candidate2Name = body.children[1].children[0];
-    var candidate1Results = body.children[0].children[1];
-    var candidate2Results = body.children[1].children[1];
-    var winnerName = body.children[2].children[1];
+    const stateInfoTable = document.getElementById("stateResults");
+    let header = stateInfoTable.children[0];
+    let body = stateInfoTable.children[1];
+    let stateName = header.children[0].children[0];
+    let abbrev = header.children[0].children[1];
+    let candidate1Name = body.children[0].children[0];
+    let candidate2Name = body.children[1].children[0];
+    let candidate1Results = body.children[0].children[1];
+    let candidate2Results = body.children[1].children[1];
+    let winnerName = body.children[2].children[1];
 
     stateName.innerText = theStates[state].nameFull;
     abbrev.innerText = theStates[state].nameAbbrev;
@@ -74,11 +74,10 @@ var setStateResults = function(state) {
     }
 }   
 
-
 biden.tallyUpTotalVotes();
 trump.tallyUpTotalVotes();
    
-var winner = "?";
+let winner = "?";
    
 if (biden.totalVotes > trump.totalVotes) {
     winner = biden.name;
@@ -88,8 +87,8 @@ if (biden.totalVotes > trump.totalVotes) {
     winner = "TIE."
 }
    
-var countryInfoTable = document.getElementById("countryResults");
-var row = countryInfoTable.children[0].children[0];
+const countryInfoTable = document.getElementById("countryResults");
+let row = countryInfoTable.children[0].children[0];
 
 row.children[0].innerText = biden.name;
 row.children[1].innerText = biden.totalVotes;
